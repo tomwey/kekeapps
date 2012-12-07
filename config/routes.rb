@@ -1,4 +1,16 @@
 Kekeapps::Application.routes.draw do
+
+  match '/more' => 'more_game#more'
+  
+  root to:'home#index'
+  
+  devise_for :users, :path => "account"
+  
+  namespace :cpanel do
+    root :to => 'home#index'
+    resources :app_infos
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

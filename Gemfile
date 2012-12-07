@@ -5,6 +5,16 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem "rmagick"
+gem "carrierwave"
+
+gem "devise"
+
+gem "will_paginate"
+gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
+gem "anjlab-bootstrap-rails", :git => "git://github.com/anjlab/bootstrap-rails.git", :require => "bootstrap-rails"
+gem "bootstrap_helper", "1.4.1"
+
 group :development do
   gem 'sqlite3'
 end
