@@ -1,4 +1,5 @@
 Kekeapps::Application.routes.draw do
+<<<<<<< HEAD
 
   match '/more' => 'more_game#more'
   
@@ -10,6 +11,9 @@ Kekeapps::Application.routes.draw do
     root :to => 'home#index'
     resources :app_infos
   end
+=======
+  resources :app_infos
+>>>>>>> b38ed4179a3d7bf2dd826a2ba337a6c83f029f19
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

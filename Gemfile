@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem "rmagick"
 gem "carrierwave"
 
+<<<<<<< HEAD
 gem "devise"
 
 gem "will_paginate"
@@ -15,6 +16,8 @@ gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
 gem "anjlab-bootstrap-rails", :git => "git://github.com/anjlab/bootstrap-rails.git", :require => "bootstrap-rails"
 gem "bootstrap_helper", "1.4.1"
 
+=======
+>>>>>>> b38ed4179a3d7bf2dd826a2ba337a6c83f029f19
 group :development do
   gem 'sqlite3'
 end
