@@ -137,11 +137,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   anjlab-bootstrap-rails!
   bootstrap_helper (= 1.4.1)
-=======
->>>>>>> b38ed4179a3d7bf2dd826a2ba337a6c83f029f19
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
