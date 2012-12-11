@@ -12,12 +12,12 @@ END
 cpanel.html.erb
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/app/views/layouts/cpanel.html.erb
+V 102
+/svn/legalassistant/!svn/ver/13/01-IOS/02-SourceCode/Server/kekeapps/app/views/layouts/cpanel.html.erb
 END
 application.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svn/legalassistant/!svn/ver/11/01-IOS/02-SourceCode/Server/kekeapps/app/views/layouts/application.html.erb
+/svn/legalassistant/!svn/ver/13/01-IOS/02-SourceCode/Server/kekeapps/app/views/layouts/application.html.erb
 END

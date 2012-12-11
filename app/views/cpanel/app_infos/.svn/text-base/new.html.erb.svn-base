@@ -1,1 +1,3 @@
-<%= render 'form' %>
+
+<%= render 'form', :legend => '创建应用程序资料' %>
+

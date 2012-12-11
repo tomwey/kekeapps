@@ -4,7 +4,11 @@ Kekeapps::Application.routes.draw do
   
   devise_for :users, :path => "account", :path_names => { :sign_in => 'login', 
                                                           :sign_out => 'logout'
-                                                        }
+                                                        },
+                                         :controllers => {
+                                           :sessions => "sessions",
+                                           :registrations => "registrations"
+                                         }
   
   root :to => redirect('/account/login')
   

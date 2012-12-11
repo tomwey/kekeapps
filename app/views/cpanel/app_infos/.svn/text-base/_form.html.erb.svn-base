@@ -1,11 +1,11 @@
 <%= simple_form_for([:cpanel,@app_info], :html => { :enctype =>  "multipart/form-data", :class => 'form-horizontal'}) do |f| %>
 	<%= render 'shared/error_messages', :target => @app_info %>
 	<fieldset>
-		<legend>创建一条应用信息</legend>
+		<legend><%= legend %></legend>
 		
 		<%= f.input :title, :label => "应用名" %>
     <%= f.input :description, :as => :text, :label => "应用介绍", :input_html => { :class => "xxlarge", :rows => "5", :cols => "50" } %>
-    <%= f.input :app_url, :label => "应用商店地址", :input_html => { :class => "xxlarge" }, :placeholder => "http://" %>
+    <%= f.input :app_url, :label => "应用商店地址", :input_html => { :class => "input-xxlarge" }, :placeholder => "http://" %>
 		<%= f.input :image, :label => '应用Icon' %>
 		
 		<div class="form-actions">

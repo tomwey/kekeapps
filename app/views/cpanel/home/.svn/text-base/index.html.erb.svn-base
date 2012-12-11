@@ -1,12 +1,10 @@
-<h3 class="head-pager">最新上线</h3>
-<ul class="unstyled">
+
+<h3>最新上线</h3>
+<dl class="dl-horizontal">
 	<% @recent_app_infos.each do |app_info| %>
-		<li class="span3">
-			<%= image_tag app_info.image_url(:thumb), class:"pull-left" %>
-			<div class="caption">
-				<h5><%= app_info.title %></h5>
-				<p><%= app_info.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
-			</div>
-		</li>
+		<dt><%= image_tag app_info.image_url(:thumb)%></dt>
+		<dd><h5><%= app_info.title %></h5></dd>
+		<dd><p><%= app_info.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p></dd>
 	<% end %>
-</ul>
+</dl>
+

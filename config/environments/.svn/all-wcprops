@@ -12,12 +12,12 @@ END
 development.rb
 K 25
 svn:wc:ra_dav:version-url
-V 102
-/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/config/environments/development.rb
+V 103
+/svn/legalassistant/!svn/ver/13/01-IOS/02-SourceCode/Server/kekeapps/config/environments/development.rb
 END
 production.rb
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/config/environments/production.rb
+V 102
+/svn/legalassistant/!svn/ver/13/01-IOS/02-SourceCode/Server/kekeapps/config/environments/production.rb
 END

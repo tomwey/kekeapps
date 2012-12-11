@@ -10,7 +10,7 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <%= link_to("控制台", cpanel_root_path, :class => "brand")%>
+        <%= link_to("kekeapps", cpanel_root_path, :class => "brand")%>
 				<ul class="nav">
 					<li><%= link_to "Dashboard", cpanel_root_path %></li>
 					<li><%= link_to "Apps", cpanel_app_infos_path %></li>
@@ -31,6 +31,7 @@
   </div>
 	<div class="container">
 		<%= yield %>
+		<%= render 'layouts/footer' %>
 	</div>
 
 </body>
