@@ -1,0 +1,14 @@
+<% content_for :styles do %>
+	
+<% end %>
+<ul class="app-list">
+		<% @app_infos.each do |app_info| %>
+			<li>
+					<%= link_to app_info.app_url do %>
+						<%= image_tag(app_info.image_url(:thumb), class:"pull-left") if app_info.image? %>
+						<p><strong><%= app_info.title %></strong>
+								<br><em><%= app_info.description %></em></p>
+					<% end %>
+			</li>
+		<% end %>
+</ul>

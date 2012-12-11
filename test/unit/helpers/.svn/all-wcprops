@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/unit/helpers
+END
+home_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/unit/helpers/home_helper_test.rb
+END
+more_game_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/unit/helpers/more_game_helper_test.rb
+END
+app_infos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/unit/helpers/app_infos_helper_test.rb
+END

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>kekeapps - Control Panel</title>
+  <%= stylesheet_link_tag    "cpanel" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to("控制台", cpanel_root_path, :class => "brand")%>
+				<ul class="nav">
+					<li><%= link_to "Dashboard", cpanel_root_path %></li>
+					<li><%= link_to "Apps", cpanel_app_infos_path %></li>
+				</ul>
+				
+        <ul class="nav  pull-right">
+          <li class="dropdown" id="user_menu">
+            <a href="#user_menu" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class='caret'></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "修改密码", edit_user_registration_path %></li>
+							<li><%= link_to "退出", destroy_user_session_path, :method => :delete, confirm: "确认要退出吗？" %></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+	<div class="container">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

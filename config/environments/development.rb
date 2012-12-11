@@ -31,6 +31,10 @@ Kekeapps::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  
+  config.to_prepare { SessionsController.force_ssl }
+  config.to_prepare { RegistrationsController.force_ssl }
+  config.to_prepare { Devise::PasswordsController.force_ssl }
 
   # Expands the lines which load the assets
   config.assets.debug = true

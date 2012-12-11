@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @app_info.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @app_info.description %>
+</p>
+
+<p>
+  <b>App url:</b>
+  <%= @app_info.app_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_cpanel_app_info_path(@app_info) %> |
+<%= link_to 'Back', cpanel_app_infos_path %>

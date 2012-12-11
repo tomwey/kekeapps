@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/db/migrate
+END
+20121207062911_devise_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/db/migrate/20121207062911_devise_create_users.rb
+END
+20121206040133_create_app_infos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/db/migrate/20121206040133_create_app_infos.rb
+END
+20121206071354_add_image_to_app_infos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/db/migrate/20121206071354_add_image_to_app_infos.rb
+END

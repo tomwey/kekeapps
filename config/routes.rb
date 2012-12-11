@@ -2,9 +2,15 @@ Kekeapps::Application.routes.draw do
 
   match '/more' => 'more_game#more'
   
-  root to:'home#index'
+  devise_for :users, :path => "account", :path_names => { :sign_in => 'login', 
+                                                          :sign_out => 'logout'
+                                                        },
+                                         :controllers => {
+                                           :sessions => "sessions",
+                                           :registrations => "registrations"
+                                         }
   
-  devise_for :users, :path => "account"
+  root :to => redirect('/account/login')
   
   namespace :cpanel do
     root :to => 'home#index'

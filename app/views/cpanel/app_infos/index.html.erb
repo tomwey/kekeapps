@@ -1,0 +1,38 @@
+<div class="row">
+	<h3 class="span3">应用列表</h3>
+	<div class="span3 offset6">
+		<%= link_to '新建应用信息', new_cpanel_app_info_path, class: 'pull-right btn btn-success btn-large' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+		      <th>Icon</th>
+		      <th>App Name</th>
+		      <th>App Intro</th>
+		      <th>App Store URL</th>
+					<th>Created at</th>
+					<th>Actions</th>
+	      </tr>
+			</thead>
+			<tbody>
+				<% @app_infos.each do |app_info| %>
+				<tr>
+					<td><%= image_tag app_info.image_url(:thumb) if app_info.image? %></td>
+					<td width="10%"><%= app_info.title %></td>
+					<td width="20%"><%= app_info.description %></td>
+					<td><%= link_to app_info.app_url, app_info.app_url %></td>
+					<td width="20%"><%= app_info.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+					<td>
+						<%= link_to '编辑', edit_cpanel_app_info_path(app_info), class: 'btn btn-mini' %>
+						<%= link_to '删除', [:cpanel, app_info], method: :delete, confirm: '确定要删除吗？', class: 'btn btn-danger btn-mini' %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

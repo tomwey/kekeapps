@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/fixtures
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/fixtures/users.yml
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/fixtures/.gitkeep
+END
+app_infos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/legalassistant/!svn/ver/6/01-IOS/02-SourceCode/Server/kekeapps/test/fixtures/app_infos.yml
+END
