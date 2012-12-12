@@ -60,7 +60,7 @@ class Cpanel::AppInfosController < Cpanel::ApplicationController
 
     respond_to do |format|
       if @app_info.update_attributes(params[:app_info])
-        format.html { redirect_to @app_info, notice: 'App info was successfully updated.' }
+        format.html { redirect_to cpanel_app_infos_path, notice: 'App info was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class Cpanel::AppInfosController < Cpanel::ApplicationController
     @app_info.destroy
 
     respond_to do |format|
-      format.html { redirect_to app_infos_url }
+      format.html { redirect_to cpanel_app_infos_url }
       format.json { head :no_content }
     end
   end
