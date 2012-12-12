@@ -8,16 +8,16 @@
 								:autocomplete => "off",
  								:hint => "如果不想修改密码，可不填", 
 								:required => false,
-								:label => "原密码" %>
+								:label => "新密码" %>
 								
     <%= f.input :password_confirmation, 
 								:required => false,
-								:label => "确认密码" %>
+								:label => "确认新密码" %>
 								
     <%= f.input :current_password, 
 								:hint => "输入新密码", 
 								:required => true,
-								:label => '新密码' %>
+								:label => '旧密码' %>
   </div>
 
   <div class="form-actions">
