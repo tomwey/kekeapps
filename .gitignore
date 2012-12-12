@@ -21,3 +21,6 @@ doc/
 .project
 .DS_Store
 .idea
+.svn
+
+public/uploads/
