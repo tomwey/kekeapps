@@ -1,6 +1,10 @@
 Kekeapps::Application.routes.draw do
 
-  match '/more' => 'more_game#more'
+  namespace :api do
+    namespace :v1 do
+      resources :app_infos, :only => :index, :format => :json
+    end
+  end
   
   devise_for :users, :path => "account", :path_names => { :sign_in => 'login', 
                                                           :sign_out => 'logout'
@@ -15,6 +19,11 @@ Kekeapps::Application.routes.draw do
   namespace :cpanel do
     root :to => 'home#index'
     resources :app_infos
+    
+    resources :api_keys, :only => [:create, :update]
+    
+    match 'api_keys/latest' => 'api_keys#show', as: :latest_api_key, via: :get
+    get 'update_access_token' => 'api_keys#update_access_token', as: :update_access_token
   end
 
   # The priority is based upon order of creation:

@@ -1,0 +1,10 @@
+<% if @api_key %>
+ <div class="well">
+ 	<p class="info"><%= @api_key.access_token %></p>
+  <%= link_to '更换一个', cpanel_update_access_token_path, 
+		class:"btn", :method => :get %><span class="help-inline">	用于获取json数据时认证</span>
+ </div>
+<% else %>
+	<p>还没有生成密钥？<%= link_to '创建密钥', cpanel_generate_api_key_path, 
+					:method => :post, class: "btn btn-success btn-large" %></p>
+<% end %>
