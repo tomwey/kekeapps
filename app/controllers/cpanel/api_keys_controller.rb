@@ -11,7 +11,11 @@ class Cpanel::ApiKeysController < Cpanel::ApplicationController
   end
   
   def update_access_token
-    @api_key.update_access_token
+    if @api_key
+      @api_key.update_access_token
+    else
+      ApiKey.create!
+    end
     redirect_to cpanel_latest_api_key_path
   end
   
