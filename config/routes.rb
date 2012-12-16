@@ -1,5 +1,7 @@
 Kekeapps::Application.routes.draw do
 
+  namespace :cpanel do resources :news end
+
   namespace :api do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
@@ -24,6 +26,8 @@ Kekeapps::Application.routes.draw do
     
     match 'api_keys/latest' => 'api_keys#show', as: :latest_api_key, via: :get
     get 'update_access_token' => 'api_keys#update_access_token', as: :update_access_token
+    
+    resources :newsblasts
   end
 
   # The priority is based upon order of creation:

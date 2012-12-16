@@ -1,9 +1,10 @@
 class AppInfo < ActiveRecord::Base
-  attr_accessible :app_url, :description, :title, :image, :apple_id
+  attr_accessible :app_url, :description, :title, :image, :apple_id, :bundle_id
   
   validates :app_url, :presence => true
   validates :title, :presence => true
   validates :apple_id, :presence => true
+  validates :bundle_id, :presence => true
   
   mount_uploader :image, ImageUploader
   
