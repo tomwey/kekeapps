@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="span8">
-		<h4>Recent Newsblasts</h4>
+		<h4>Recent News Blasts</h4>
 		<ul>
-			<% @recent_newsblasts.each do |newsblast| %>
+			<% @recent_news_blasts.each do |news_blast| %>
 				<li>
-					<p><%= link_to newsblast.title, cpanel_newsblast_path(newsblast) %></p>
+					<p><%= link_to news_blast.title, cpanel_news_blast_path(news_blast) %></p>
 				</li>
 			<% end %>
 		</ul>

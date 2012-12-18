@@ -1,0 +1,17 @@
+<%= simple_form_for([:cpanel,@news_blast], 
+	:html => { :class => 'form-horizontal'}) do |f| %>
+	<%= render 'shared/error_messages', :target => @news_blast %>
+	<fieldset>
+		<legend><%= legend %></legend>
+		
+		<%= f.input :title, :label => "标题" %>
+    <%= f.input :content, :as => :text, :label => "内容", :input_html => { :class => "xxlarge", :rows => "5", :cols => "50" } %>
+    <%= f.input :link, :label => "应用链接地址", :input_html => { :class => "input-xxlarge" }, :placeholder => "http://" %>
+		
+		<div class="form-actions">
+	    <%= f.submit "保存", :class => "btn btn-primary", :disable_with => '正在保存...' %>
+			<%= link_to '取消', :back, :class => "btn" %>
+	  </div>
+		
+	</fieldset>
+<% end %>

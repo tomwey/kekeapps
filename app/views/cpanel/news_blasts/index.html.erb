@@ -1,0 +1,41 @@
+<div class="row">
+	<h3 class="span3">资料列表</h3>
+	<div class="span3 offset6">
+		<%= link_to '新建资料', new_cpanel_news_blast_path, class: 'pull-right btn btn-success btn-large' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+		      <th>ID</th>
+		      <th>Title</th>
+		      <th>Content</th>
+		      <th>Link</th>
+					<th>Created at</th>
+					<th>Actions</th>
+	      </tr>
+			</thead>
+			<tbody>
+				<% @news_blasts.each do |news_blast| %>
+				<tr>
+					<td><%= news_blast.id %></td>
+					<td width="10%"><%= news_blast.title %></td>
+					<td width="25%"><%= news_blast.content %></td>
+					<td width="25%"><%= link_to news_blast.link, news_blast.link, 
+								:target => "_blank" %></td>
+					<td width="18%"><%= news_blast.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+					<td>
+						<%= link_to '编辑', edit_cpanel_news_blast_path(news_blast), class: 'btn btn-mini' %>
+						<%= link_to '删除', [:cpanel, news_blast], method: :delete, confirm: '确定要删除吗？', class: 'btn btn-danger btn-mini' %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
