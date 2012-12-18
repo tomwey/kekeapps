@@ -5,6 +5,7 @@ Kekeapps::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
+      resources :news_blasts, :only => :index, :format => :json
     end
   end
   

@@ -11,7 +11,7 @@
 	</div>
 	<div class="span4">
 		<h4>Recent Newsblasts</h4>
-		<dl class="dl-horizontal">
+		<dl>
 			<% @recent_app_infos.each do |app_info| %>
 				<dt><%= image_tag app_info.image_url(:thumb)%></dt>
 				<dd><h5><%= app_info.title %></h5></dd>
