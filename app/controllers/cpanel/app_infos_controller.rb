@@ -2,7 +2,7 @@ class Cpanel::AppInfosController < Cpanel::ApplicationController
   # GET /app_infos
   # GET /app_infos.json
   def index
-    @app_infos = AppInfo.all
+    @app_infos = AppInfo.recent
 
     respond_to do |format|
       format.html # index.html.erb
