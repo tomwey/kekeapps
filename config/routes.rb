@@ -6,6 +6,7 @@ Kekeapps::Application.routes.draw do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
       resources :news_blasts, :only => :index, :format => :json
+      # match '/apple_id/:bundle_id' => 'news_blasts#index', via: :get
     end
   end
   
@@ -18,6 +19,8 @@ Kekeapps::Application.routes.draw do
                                          }
   
   root :to => redirect('/account/login')
+  
+  get '/info/apple_id' => 'app_infos#apple_id'
   
   namespace :cpanel do
     root :to => 'home#index'

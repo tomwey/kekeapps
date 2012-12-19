@@ -20,6 +20,12 @@ class AppInfosController < ApplicationController
       format.json { render json: @app_info }
     end
   end
+  
+  def apple_id
+    bundle_id = params[:bundle_id]
+    @app_info = AppInfo.find_by_bundle_id(bundle_id)
+    render :text => @app_info.try(:apple_id), layout: false
+  end
 
   # GET /app_infos/new
   # GET /app_infos/new.json
