@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218153511) do
+ActiveRecord::Schema.define(:version => 20130113135519) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(:version => 20121218153511) do
     t.string   "image"
     t.string   "apple_id"
     t.string   "bundle_id"
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "app_info_id"
   end
 
   create_table "news_blasts", :force => true do |t|

@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="span12">
+		<h3>用户反馈</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+		      <th>ID</th>
+		      <th>Content</th>
+		      <th>App Name</th>
+		      <th>Created At</th>
+	      </tr>
+			</thead>
+			<tbody>
+				<% @feedbacks.each do |feedback| %>
+				<tr>
+					<td><%= link_to feedback.id, cpanel_feedback_path(feedback) %></td>
+					<td width="40%"><%= feedback.content %></td>
+					<td><%= feedback.app_name %></td>
+					<td><%= feedback.created_at %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -21,3 +21,36 @@ pre {
 ul {
 	list-style: none;
 }
+
+.recent {
+	height: 300px;
+	border: 1px solid #aaa;
+	h3 {
+		font-size: 14px;
+		margin: 0;
+		padding-left: 10px;
+		background: #085a87;
+		color: white;
+		height: 30px;
+		line-height:30px;
+	}
+	ul {
+		width: 95%;
+		margin: 0 auto;
+		margin-top: 5px;
+		li {
+			border-bottom: 1px dashed #085a87;
+			padding: 5px 0;
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 8px;
+				-webkit-border-radius: 8px;
+				-moz-border-radius: 8px;
+				border: 1px solid #ccc;
+			}
+			
+		}
+	}
+	
+}

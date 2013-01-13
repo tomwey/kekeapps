@@ -7,6 +7,7 @@ Kekeapps::Application.routes.draw do
       resources :app_infos, :only => :index, :format => :json
       resources :news_blasts, :only => :index, :format => :json
       # match '/apple_id/:bundle_id' => 'news_blasts#index', via: :get
+      resources :feedbacks, :only => :create
     end
   end
   
@@ -32,6 +33,7 @@ Kekeapps::Application.routes.draw do
     get 'update_access_token' => 'api_keys#update_access_token', as: :update_access_token
     
     resources :news_blasts
+    resources :feedbacks, :only => [:index, :show]
   end
 
   # The priority is based upon order of creation:

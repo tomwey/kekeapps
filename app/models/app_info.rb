@@ -1,6 +1,8 @@
 class AppInfo < ActiveRecord::Base
   attr_accessible :app_url, :description, :title, :image, :apple_id, :bundle_id
   
+  has_many :feedbacks
+  
   validates :app_url, :presence => true
   validates :title, :presence => true
   validates :apple_id, :presence => true

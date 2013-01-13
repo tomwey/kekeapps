@@ -3,7 +3,6 @@
 <head>
   <title>kekeapps - Control Panel</title>
   <%= stylesheet_link_tag    "cpanel" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,6 +14,7 @@
 					<li><%= link_to "Dashboard", cpanel_root_path %></li>
 					<li><%= link_to "Apps", cpanel_app_infos_path %></li>
 					<li><%= link_to "Newsblasts", cpanel_news_blasts_path %></li>
+					<li><%= link_to "Feedbacks", cpanel_feedbacks_path %></li>
 					<li><%= link_to "Api Key", cpanel_latest_api_key_path %></li>
 				</ul>
 				
@@ -41,5 +41,7 @@
 		<%= render 'layouts/footer' %>
 	</div>
 
+	<%= javascript_include_tag "application" %>
+	
 </body>
 </html>
