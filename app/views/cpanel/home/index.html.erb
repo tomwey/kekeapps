@@ -5,7 +5,7 @@
 			<% @recent_app_infos.each do |app_info| %>
 				<li>
 					<div>
-						<%= link_to image_tag(app_info.image.url(:thumb)), cpanel_app_info_path(app_info) %>
+						
 						<%= link_to app_info.title, cpanel_app_info_path(app_info) %>
 					</div>
 				</li>
