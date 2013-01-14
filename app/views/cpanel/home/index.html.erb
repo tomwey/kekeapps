@@ -1,18 +1,17 @@
 <div class="row-fluid">
-	<div class="span3">
+	<div class="recent span3">
 		<h3>最新应用</h3>
 		<ul>
 			<% @recent_app_infos.each do |app_info| %>
 				<li>
 					<div>
-						
 						<%= link_to app_info.title, cpanel_app_info_path(app_info) %>
 					</div>
 				</li>
 			<% end %>
 		</ul>
 	</div>
-	<div class="span5">
+	<div class="recent span5">
 		<h3>最新资讯</h3>
 		<ul>
 			<% @recent_news_blasts.each do |news_blast| %>
@@ -20,7 +19,7 @@
 			<% end %>
 		</ul>
 	</div>
-	<div class="span4">
+	<div class="recent span4">
 		<h3>最新反馈</h3>
 		<ul>
 			<% @recent_feedbacks.each do |feedback| %>
