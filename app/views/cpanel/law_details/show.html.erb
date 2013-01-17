@@ -1,0 +1,16 @@
+<div class="well">
+	<article class="law-detail">
+			<header>
+				<h1 class="law-title center"><%= @law_detail.title %></h1>
+				<p class="center"><%= @law_detail.try(:summary) %></p>
+			</header>
+			<div class="law-body">
+				<div class="law-catalog">
+					<%= raw(@law_detail.try(:catalog)) %>
+				</div>
+				<div class="law-content">
+					<%= raw(@law_detail.content) %>
+				</div>
+			</div>
+	</article>
+</div>

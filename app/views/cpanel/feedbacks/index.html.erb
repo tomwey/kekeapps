@@ -5,6 +5,7 @@
 			<thead>
 				<tr>
 		      <th>ID</th>
+					<th>Email</th>
 		      <th>Content</th>
 		      <th>App Name</th>
 		      <th>Created At</th>
@@ -14,6 +15,7 @@
 				<% @feedbacks.each do |feedback| %>
 				<tr>
 					<td><%= link_to feedback.id, cpanel_feedback_path(feedback) %></td>
+					<td><%= feedback.title %></td>
 					<td width="40%"><%= feedback.content %></td>
 					<td><%= feedback.app_name %></td>
 					<td><%= feedback.created_at %></td>

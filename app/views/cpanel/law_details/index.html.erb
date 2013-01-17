@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="span9">
+		<h3>所有的法律数据</h3>
+	</div>
+	<div class="span3">
+		<%= link_to '新增法律条文', new_cpanel_law_detail_path, :class => 'btn btn-info pull-right' %>
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+		      <th>ID</th>
+		      <th>Title</th>
+		      <th>Pub Date</th>
+					<th>Version</th>
+					<th>Category</th>
+					<th>Summary</th>
+					<th>Operation</th>
+					<th>Created at</th>
+					<th>Actions</th>
+	      </tr>
+			</thead>
+			<tbody>
+				<% @law_details.each do |law_data| %>
+				<tr>
+					<td><%= link_to law_data.id, [:cpanel, law_data], class: 'badge badge-info' %></td>
+					<td width="12%"><%= law_data.title %></td>
+					<td width="10%"><%= law_data.pub_date %></td>
+					<td><%= law_data.version.to_s %></td>
+					<td><%= law_data.law_category.name %></td>
+					<td width="10%"><%= law_data.summary %></td>
+					<td width="5%"><%= law_data.action %></td>
+					<td width="18%"><%= law_data.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+					<td width="15%">
+						<%= link_to '编辑', edit_cpanel_law_detail_path(law_data), class: 'btn btn-mini' %>
+						<%= link_to '删除', [:cpanel, law_data], method: :delete, confirm: '确定要删除吗？', class: 'btn btn-danger btn-mini' %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,11 +1,10 @@
 Kekeapps::Application.routes.draw do
 
-  namespace :cpanel do resources :news end
-
   namespace :api do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
       resources :news_blasts, :only => :index, :format => :json
+      resources :law_details, :only => :index, :format => :json
       # match '/apple_id/:bundle_id' => 'news_blasts#index', via: :get
       resources :feedbacks, :only => :create
     end
@@ -34,6 +33,7 @@ Kekeapps::Application.routes.draw do
     
     resources :news_blasts
     resources :feedbacks, :only => [:index, :show]
+    resources :law_details
   end
 
   # The priority is based upon order of creation:

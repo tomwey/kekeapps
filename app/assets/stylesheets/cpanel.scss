@@ -54,3 +54,28 @@ ul {
 	}
 	
 }
+
+.center {
+	text-align: center;
+}
+.law-detail {
+	.law-title {
+		font-size: 18px;
+	}
+	.law-catalog {
+		margin: 40px 0 20px 40px;
+	}
+}
+
+#footer {
+	margin-top: 20px;
+	padding: 20px 0;
+	background: #eee;
+	&:after {
+		background: #eee;
+		content: "";
+		position:fixed;
+		width:100%;
+		height:100%;
+	}
+}

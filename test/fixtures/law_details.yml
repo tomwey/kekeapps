@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pub_date: MyString
+  title: MyString
+  doc_id: MyString
+  summary: 
+  pub_dept: MyString
+  content: MyText
+  version: 1
+  visible: false
+  action: MyString
+  law_category_id: 1
+
+two:
+  pub_date: MyString
+  title: MyString
+  doc_id: MyString
+  summary: 
+  pub_dept: MyString
+  content: MyText
+  version: 1
+  visible: false
+  action: MyString
+  law_category_id: 1

@@ -1,6 +1,6 @@
 class Cpanel::FeedbacksController < Cpanel::ApplicationController
   def index
-    @feedbacks = Feedback.all
+    @feedbacks = Feedback.order('created_at DESC')
   end
   
   def show
