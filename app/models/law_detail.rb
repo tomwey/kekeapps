@@ -1,10 +1,13 @@
 class LawDetail < ActiveRecord::Base
-  attr_accessible :action, :content, :catalog, :doc_id, :law_category_id, :exec_date, :pub_date, :pub_dept, :summary, :title, :version, :visible
+  attr_accessible :action, :content, :catalog, :doc_id, 
+                  :law_category_id, :exec_date, :pub_date, :pub_dept, 
+                  :summary, :title, :version, :visible, :law_udid
+                  
   belongs_to :law_category
   
   ACTIONS = %w(add update delete)
   
-  validates_presence_of :action, :content, :summary, :law_category_id, :pub_date, :title, :version, :pub_dept
+  validates_presence_of :action, :content, :summary, :law_category_id, :pub_date, :title, :pub_dept
   validates_numericality_of :version, :greater_than => 0
   
   scope :visibled, where(:visible => true)
@@ -12,6 +15,22 @@ class LawDetail < ActiveRecord::Base
   
   def self.latest_laws_by_version(version)
     where('version > ?', version).sorted.visibled
+  end
+  
+  before_create :set_law_udid
+  def set_law_udid
+    if new_record?
+      array = []
+      6.times do
+        array << rand(9) + 1;
+      end
+      self.law_udid = array.join('')
+    end
+  end
+  
+  before_save :update_version
+  def update_version
+    self.version += 1
   end
   
   def as_json(options={})
@@ -27,7 +46,8 @@ class LawDetail < ActiveRecord::Base
       :doc_id => doc_id,
       :pub_dept => pub_dept,
       :exec_date => exec_date,
-      :version => version
+      :version => version,
+      :law_id => law_udid
     }
   end
   

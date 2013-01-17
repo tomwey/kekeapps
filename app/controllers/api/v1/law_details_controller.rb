@@ -5,7 +5,14 @@ module Api
       
       def index
         @law_details = LawDetail.latest_laws_by_version(params[:version])
-        respond_with(@law_details)
+        if @law_details.empty?
+          respond_with(@law_details)
+          return
+        end
+        version = @law_details[0].version
+        render json: { :latest_version => version, 
+                       :result => @law_details
+                     }
       end
       
     end
