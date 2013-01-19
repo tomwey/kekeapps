@@ -7,8 +7,9 @@ class LawDetail < ActiveRecord::Base
   
   ACTIONS = %w(add update delete)
   
-  validates_presence_of :action, :content, :summary, :law_category_id, :pub_date, :title, :pub_dept
+  validates_presence_of :action, :content, :summary, :law_category_id, :version, :pub_date, :title, :pub_dept
   validates_numericality_of :version, :greater_than => 0
+  validates_uniqueness_of :law_udid
   
   scope :visibled, where(:visible => true)
   scope :sorted, order('version DESC')
@@ -26,11 +27,6 @@ class LawDetail < ActiveRecord::Base
       end
       self.law_udid = array.join('')
     end
-  end
-  
-  before_save :update_version
-  def update_version
-    self.version += 1
   end
   
   def as_json(options={})

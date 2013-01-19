@@ -12,6 +12,7 @@
 			<%= f.input :doc_id, :label => "文档编号" %>
 			<%= f.input :exec_date, :label => "实施日期" %>
 	    <%= f.input :summary, :label => "摘要", :input_html => { :class => "span5" } %>
+			<%= f.input :version, :label => "数据版本号" %>
 			<%= f.input :law_category_id, :label => '类别', :collection => LawCategory.category_collection, :prompt => '请选择一个类别' %>
 			<%= f.input :action, :label => '操作方式', :collection => LawDetail::ACTIONS, :prompt => '请选择操作' %>
 		
