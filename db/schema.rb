@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119042241) do
+ActiveRecord::Schema.define(:version => 20130119070644) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20130119042241) do
     t.string   "pub_date"
     t.string   "title"
     t.string   "doc_id"
-    t.string   "summary"
+    t.text     "summary",         :limit => 255
     t.string   "exec_date"
     t.string   "pub_dept"
     t.text     "catalog",         :limit => 255
