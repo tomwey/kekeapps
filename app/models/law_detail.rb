@@ -31,17 +31,16 @@ class LawDetail < ActiveRecord::Base
   
   def as_json(options={})
     {
-      :id => id,
       :title => title,
       :pub_date => pub_date,
       :catalog => catalog,
-      :summary => summary,
+      :government_ling => summary,
       :content => content,
       :action => action,
       :belong_id => law_category_id,
-      :doc_id => doc_id,
+      :doc_number => doc_id,
       :pub_dept => pub_dept,
-      :exec_date => exec_date,
+      :impl_date => exec_date,
       :version => version,
       :law_id => law_udid
     }
