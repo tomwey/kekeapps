@@ -7,7 +7,7 @@ class LawDetail < ActiveRecord::Base
   
   ACTIONS = %w(add update delete)
   
-  validates_presence_of :action, :content, :summary, :law_category_id, :version, :pub_date, :title, :pub_dept
+  validates_presence_of :action, :content, :law_category_id, :version, :pub_date, :title, :pub_dept
   validates_numericality_of :version, :greater_than => 0
   validates_uniqueness_of :law_udid
   
