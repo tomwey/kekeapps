@@ -4,15 +4,16 @@
 	<fieldset>
 		<legend><%= legend %></legend>
 		
-			<%= f.input :title, :label => "标题" %>
+			<%= f.input :title, :label => "标题", :input_html => { :class => "span5" } %>
 			<%= f.input :pub_date, :label => "发布日期" %>
-			<%= f.input :catalog, :label => "目录" %>
+			<%= f.input :catalog, :as => :text, :label => "目录", 
+								  :input_html => { :class => "span5", :rows => 6} %>
 	    <%= f.input :content, :as => :text, :label => "法规正文", :input_html => { :class => "span5", :rows => 12 } %>
 			<%= f.input :pub_dept, :label => "发布部门" %>
 			<%= f.input :doc_id, :label => "文档编号" %>
 			<%= f.input :exec_date, :label => "实施日期" %>
-	    <%= f.input :summary, :label => "摘要", :input_html => { :class => "span5" } %>
-			<%= f.input :version, :label => "数据版本号" %>
+	    <%= f.input :summary, :as => :text, :label => "摘要", 
+									:input_html => { :class => "span5", :rows => 6 } %>
 			<%= f.input :law_category_id, :label => '类别', :collection => LawCategory.category_collection, :prompt => '请选择一个类别' %>
 			<%= f.input :action, :label => '操作方式', :collection => LawDetail::ACTIONS, :prompt => '请选择操作' %>
 		

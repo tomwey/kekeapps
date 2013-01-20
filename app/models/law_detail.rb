@@ -29,6 +29,15 @@ class LawDetail < ActiveRecord::Base
     end
   end
   
+  before_save :set_version
+  def set_version
+    version = LawDetail.visibled.maximum("version")
+    unless version
+      version = 1
+    end
+    self.version = version+1
+  end
+  
   def as_json(options={})
     {
       :title => title,
