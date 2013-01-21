@@ -12,7 +12,7 @@ class LawDetail < ActiveRecord::Base
   validates_uniqueness_of :law_udid
   
   scope :visibled, where(:visible => true)
-  scope :sorted, order('pub_date DESC')
+  scope :sorted, order('version DESC')
   
   def self.latest_laws_by_version(version)
     where('version > ?', version).sorted.visibled
