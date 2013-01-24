@@ -16,6 +16,7 @@
 		      <th>Pub Date</th>
 					<th>Version</th>
 					<th>Category</th>
+					<th>App</th>
 					<th>UDID</th>
 					<th>Operation</th>
 					<th>Created at</th>
@@ -30,6 +31,7 @@
 					<td width="10%"><%= law_detail.pub_date %></td>
 					<td><%= law_detail.version.to_s %></td>
 					<td><%= law_detail.law_category.name %></td>
+					<td width="12%"><%= law_detail.app_info.try(:title) %></td>
 					<td width="10%"><%= law_detail.law_udid %></td>
 					<td width="5%"><%= law_detail.action %></td>
 					<td width="18%"><%= law_detail.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>

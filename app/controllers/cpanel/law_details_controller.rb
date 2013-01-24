@@ -1,7 +1,7 @@
 class Cpanel::LawDetailsController < Cpanel::ApplicationController
   before_filter :find_law_detail, only: [:show, :edit, :update, :destroy]
   def index
-    @law_details = LawDetail.where(:visible => true).includes(:law_category)
+    @law_details = LawDetail.includes(:law_category, :app_info).where(:visible => true)
   end
 
   def show

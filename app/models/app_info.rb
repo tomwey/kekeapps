@@ -2,6 +2,7 @@ class AppInfo < ActiveRecord::Base
   attr_accessible :app_url, :description, :title, :image, :apple_id, :bundle_id
   
   has_many :feedbacks
+  has_many :law_details
   
   validates :app_url, :presence => true
   validates :title, :presence => true
@@ -11,6 +12,11 @@ class AppInfo < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   scope :recent, order('id DESC')
+  
+  def self.app_collection
+    @apps ||= AppInfo.all
+    @apps.collect { |app| [app.title, app.id] }
+  end
   
   def as_json(options={})
     {

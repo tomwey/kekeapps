@@ -1,9 +1,11 @@
 class LawDetail < ActiveRecord::Base
   attr_accessible :action, :content, :catalog, :doc_id, 
                   :law_category_id, :exec_date, :pub_date, :pub_dept, 
-                  :summary, :title, :version, :visible, :law_udid
+                  :summary, :title, :version, :visible, :law_udid,
+                  :app_info_id
                   
   belongs_to :law_category
+  belongs_to :app_info
   
   ACTIONS = %w(add update delete)
   
