@@ -14,8 +14,8 @@
 			<%= f.input :exec_date, :label => "实施日期" %>
 	    <%= f.input :summary, :as => :text, :label => "摘要", 
 									:input_html => { :class => "span5", :rows => 6 } %>
-			<%= f.input :law_category_id, :label => '类别', :collection => LawCategory.category_collection, :prompt => '请选择一个类别' %>
-			<%= f.input :app_info_id, :label => '所属应用', :collection => AppInfo.app_collection, :prompt => '请选择一个类别' %>
+			<%= f.input :law_category_id, :label => '类别', :collection => LawCategory.category_collection, :prompt => '请选择一个类别', :include_blank => true %>
+			<%= f.input :app_info_id, :label => '所属应用', :collection => AppInfo.app_collection, :prompt => '请选择一个应用' %>
 			
 			<%= f.input :action, :label => '操作方式', :collection => LawDetail::ACTIONS, :prompt => '请选择操作' %>
 		

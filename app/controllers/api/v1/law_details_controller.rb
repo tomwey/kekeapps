@@ -6,13 +6,14 @@ module Api
       def index
         bundle_id = params[:bundle_id] || "com.kekestudio.LawBooksChina"
         
-        app_info = AppInfo.find_by_bundle_id(bundle_id)
-        unless app_info
-          respond_with({ :error => 'Not Found' }, :status => 404)
-          return
-        end
+        # app_info = AppInfo.find_by_bundle_id(bundle_id)
+        #         unless app_info
+        #           respond_with({ :error => 'Not Found' }, :status => 404)
+        #           return
+        #         end
         
-        @law_details = app_info.law_details.latest_laws_by_version(params[:version])
+        @law_details = LawDetail.joins(:app_info).where('app_infos.bundle_id = ?', bundle_id)
+                                .latest_laws_by_version(params[:version])#app_info.law_details.latest_laws_by_version(params[:version])
         if @law_details.empty?
           respond_with(@law_details)
           return

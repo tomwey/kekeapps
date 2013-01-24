@@ -9,7 +9,7 @@ class LawDetail < ActiveRecord::Base
   
   ACTIONS = %w(add update delete)
   
-  validates_presence_of :action, :content, :law_category_id, :version, :pub_date, :title, :pub_dept
+  validates_presence_of :action, :content, :app_info_id, :version, :pub_date, :title, :pub_dept
   validates_numericality_of :version, :greater_than => 0
   validates_uniqueness_of :law_udid
   
@@ -18,6 +18,14 @@ class LawDetail < ActiveRecord::Base
   
   def self.latest_laws_by_version(version)
     where('version > ?', version).sorted.visibled
+  end
+  
+  def category_name
+    law_category.try(:name)
+  end
+  
+  def app_title
+    app_info.try(:title)
   end
   
   before_create :set_law_udid
