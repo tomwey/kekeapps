@@ -20,7 +20,7 @@
 					<td width="40%"><%= feedback.content %></td>
 					<td><%= feedback.app_name %></td>
 					<td><%= feedback.created_at %></td>
-					<td><%= link_to 'Delete', cpanel_feedback_path(feedback), :class => 'btn btn-danger', :method => :delete,
+					<td><%= link_to 'Delete', cpanel_feedback_path(feedback), :class => 'btn btn-danger btn-mini', :method => :delete,
 					 	:data => { :confirm => 'Are you sure?' } %></td>
 				</tr>
 				<% end %>
