@@ -71,7 +71,12 @@ ul {
 	margin-top: 20px;
 	padding: 20px 0;
 	background: #eee;
+	> .container {
+		border-top: 2px solid #085a87;
+		padding-top: 10px;
+	}
 	&:after {
+		border: none;
 		background: #eee;
 		content: "";
 		position:fixed;
