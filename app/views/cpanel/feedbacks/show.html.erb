@@ -1,7 +1,7 @@
 <div class="well">
 	<h4>用户反馈内容</h4>
 	<p><%= @feedback.content %></p>
-	<%= link_to 'Delete', @feedback, :class => 'btn btn-danger', :method => :delete,
+	<%= link_to 'Delete', cpanel_feedback_path(@feedback), :class => 'btn btn-danger', :method => :delete,
 	 	:data => { :confirm => 'Are you sure?' } %> 
 	<span class="muted"> | </span>
 	<%= link_to 'Back', :back, :class => 'btn btn-info' %>
