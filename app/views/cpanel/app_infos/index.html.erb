@@ -23,7 +23,7 @@
 			<tbody>
 				<% @app_infos.each do |app_info| %>
 				<tr>
-					<td><%= image_tag app_info.image_url(:thumb) if app_info.image? %></td>
+					<td><%= image_tag app_info.avatar.url(:thumb, :download => true) if app_info.avatar? %></td>
 					<td width="10%"><%= app_info.title %></td>
 					<td width="12%"><%= app_info.description %></td>
 					<td><%= link_to app_info.app_url, app_info.app_url, 

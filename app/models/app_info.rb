@@ -1,5 +1,5 @@
 class AppInfo < ActiveRecord::Base
-  attr_accessible :app_url, :description, :title, :image, :apple_id, :bundle_id
+  attr_accessible :app_url, :description, :title, :avatar, :apple_id, :bundle_id
   
   has_many :feedbacks
   has_many :law_details
@@ -9,7 +9,13 @@ class AppInfo < ActiveRecord::Base
   validates :apple_id, :presence => true
   validates :bundle_id, :presence => true
   
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
+  has_attached_file :avatar, 
+                    :storage => :dropbox, 
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+                    :styles => { :thumb => "40x40" },
+                    :dropbox_options => { :path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}" } }
+  validates_presence_of :avatar
   
   scope :recent, order('id DESC')
   

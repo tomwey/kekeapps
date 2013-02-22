@@ -9,8 +9,9 @@ gem "rmagick"
 gem "carrierwave"
 gem "mini_magick"
 
-# gem 'paperclip'
-# gem 'paperclip-dropbox'
+gem 'dropbox-sdk'
+gem 'paperclip'
+gem 'paperclip-dropbox'
 
 gem "devise"
 
