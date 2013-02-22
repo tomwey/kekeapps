@@ -1,7 +1,7 @@
 <% if @api_key %>
  <div class="well">
  	<p class="info"><%= @api_key.access_token %></p>
-  <%= link_to '更换一个', cpanel_update_access_token_path, class:"btn"%>
+  <%= link_to '更换一个', cpanel_update_access_token_path, :onclick => "return false", class:"btn"%>
 	<span class="help-inline">	用于获取json数据时认证</span>
  </div>
 <% else %>

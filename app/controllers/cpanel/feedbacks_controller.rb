@@ -6,4 +6,10 @@ class Cpanel::FeedbacksController < Cpanel::ApplicationController
   def show
     @feedback = Feedback.find(params[:id])
   end
+  
+  def destroy
+    @feedback = Feedback.find(params[:id])
+    @feedback.destroy
+    redirect_to cpanel_feedbacks_url
+  end
 end

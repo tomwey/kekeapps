@@ -13,11 +13,15 @@
 	</div>
 	<div class="recent span5">
 		<h3>最新资讯</h3>
+		<% if @recent_news_blasts.empty? %>
+		<p>没有可以显示的内容</p>
+		<% else %>
 		<ul>
 			<% @recent_news_blasts.each do |news_blast| %>
 			<li><%= link_to news_blast.title %></li>
 			<% end %>
 		</ul>
+		<% end %>
 	</div>
 	<div class="recent span4">
 		<h3>最新反馈</h3>

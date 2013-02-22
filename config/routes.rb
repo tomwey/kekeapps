@@ -32,7 +32,7 @@ Kekeapps::Application.routes.draw do
     get 'update_access_token' => 'api_keys#update_access_token', as: :update_access_token
     
     resources :news_blasts
-    resources :feedbacks, :only => [:index, :show]
+    resources :feedbacks, :only => [:index, :show, :destroy]
     resources :law_details
   end
 
