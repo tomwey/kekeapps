@@ -9,6 +9,9 @@ gem "rmagick"
 gem "carrierwave"
 gem "mini_magick"
 
+# gem 'paperclip'
+# gem 'paperclip-dropbox'
+
 gem "devise"
 
 gem "will_paginate"
