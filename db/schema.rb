@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222175541) do
+ActiveRecord::Schema.define(:version => 20130311150138) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20130222175541) do
     t.datetime "updated_at",                         :null => false
     t.string   "law_udid"
     t.integer  "app_info_id"
+    t.integer  "law_type_id"
   end
 
   add_index "law_details", ["app_info_id"], :name => "index_law_details_on_app_info_id"
@@ -95,6 +96,13 @@ ActiveRecord::Schema.define(:version => 20130222175541) do
   add_index "law_details", ["law_udid"], :name => "index_law_details_on_law_udid", :unique => true
   add_index "law_details", ["title"], :name => "index_law_details_on_title"
   add_index "law_details", ["version"], :name => "index_law_details_on_version"
+
+  create_table "law_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "db_name"
+  end
 
   create_table "news_blasts", :force => true do |t|
     t.string   "title"

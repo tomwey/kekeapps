@@ -13,7 +13,7 @@
 				<tr>
 		      <th>ID</th>
 		      <th>Title</th>
-		      <th>Pub Date</th>
+		      <th>DB</th>
 					<th>Version</th>
 					<th>Category</th>
 					<th>App</th>
@@ -28,7 +28,7 @@
 				<tr>
 					<td><%= link_to law_detail.id, [:cpanel, law_detail], class: 'badge badge-info' %></td>
 					<td width="15%"><%= law_detail.title %></td>
-					<td width="10%"><%= law_detail.pub_date %></td>
+					<td width="10%"><%= law_detail.law_type_name %></td>
 					<td><%= law_detail.version.to_s %></td>
 					<td><%= law_detail.category_name %></td>
 					<td width="12%"><%= law_detail.app_title %></td>

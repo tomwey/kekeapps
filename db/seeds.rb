@@ -15,3 +15,8 @@
 # LawCategory.create!(name:"经济法")
 # LawCategory.create!(name:"社会法")
 # LawCategory.create!(name:"诉讼及非讼程序法")
+
+LawType.create!(name:"法律法规", db_name:"enc_law_data")
+LawType.create!(name:"司法解释", db_name:"enc_sifa_data")
+LawType.create!(name:"中共中央、国务院法规", db_name:"enc_zgzy_data")
+LawType.create!(name:"部门规章", db_name:"enc_dept_data")

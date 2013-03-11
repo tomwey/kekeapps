@@ -2,14 +2,15 @@ class LawDetail < ActiveRecord::Base
   attr_accessible :action, :content, :catalog, :doc_id, 
                   :law_category_id, :exec_date, :pub_date, :pub_dept, 
                   :summary, :title, :version, :visible, :law_udid,
-                  :app_info_id
+                  :app_info_id, :law_type_id
                   
   belongs_to :law_category
   belongs_to :app_info
+  belongs_to :law_type
   
   ACTIONS = %w(add update delete)
   
-  validates_presence_of :action, :content, :app_info_id, :version, :pub_date, :title, :pub_dept
+  validates_presence_of :action, :content, :app_info_id, :law_type_id, :version, :pub_date, :title, :pub_dept
   validates_numericality_of :version, :greater_than => 0
   validates_uniqueness_of :law_udid
   
@@ -22,6 +23,10 @@ class LawDetail < ActiveRecord::Base
   
   def category_name
     law_category.try(:name)
+  end
+  
+  def law_type_name
+    law_type.try(:name)
   end
   
   def app_title
@@ -61,7 +66,8 @@ class LawDetail < ActiveRecord::Base
       :pub_dept => pub_dept,
       :impl_date => exec_date,
       :version => version,
-      :law_id => law_udid
+      :law_id => law_udid,
+      :db_name => law_type.try(:db_name)
     }
   end
   
