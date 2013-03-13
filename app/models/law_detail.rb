@@ -33,6 +33,10 @@ class LawDetail < ActiveRecord::Base
     app_info.try(:title)
   end
   
+  def db_name
+    law_type.nil? ? '' : law_type.db_name
+  end
+  
   before_create :set_law_udid
   def set_law_udid
     if new_record?
@@ -67,7 +71,7 @@ class LawDetail < ActiveRecord::Base
       :impl_date => exec_date,
       :version => version,
       :law_id => law_udid,
-      :db_name => law_type.try(:db_name)
+      :db_name => db_name
     }
   end
   
