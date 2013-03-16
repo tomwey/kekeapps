@@ -16,7 +16,6 @@ class AppInfo < ActiveRecord::Base
                     :styles => { :thumb => "40x40" },
                     :dropbox_options => { :path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}" } }
   validates_presence_of :avatar
-  
   scope :recent, order('id DESC')
   
   def self.app_collection
