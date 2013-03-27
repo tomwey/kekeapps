@@ -1,4 +1,4 @@
-class AddLawDetailsCount2 < ActiveRecord::Migration
+class AddLawDetailsCount < ActiveRecord::Migration
   def up
     add_column :app_infos, :law_details_count, :integer, :default => 0
     
