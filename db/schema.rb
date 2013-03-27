@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311150138) do
+ActiveRecord::Schema.define(:version => 20130327142338) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20130311150138) do
     t.string   "title"
     t.text     "description"
     t.string   "app_url"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "image"
     t.string   "apple_id"
     t.string   "bundle_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130311150138) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "law_details_count",   :default => 0
   end
 
   create_table "feedbacks", :force => true do |t|

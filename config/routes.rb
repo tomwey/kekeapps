@@ -4,7 +4,11 @@ Kekeapps::Application.routes.draw do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
       resources :news_blasts, :only => :index, :format => :json
-      resources :law_details, :only => :index, :format => :json
+      resources :law_details, :only => :index, :format => :json do
+        collection do
+          get :check_data
+        end
+      end
       # match '/apple_id/:bundle_id' => 'news_blasts#index', via: :get
       resources :feedbacks, :only => :create
     end
