@@ -3,7 +3,7 @@ class LawDetail < ActiveRecord::Base
                   :law_category_id, :exec_date, :pub_date, :pub_dept, 
                   :summary, :title, :version, :visible, :law_udid,
                   :app_info_id, :law_type_id
-                  
+  
   belongs_to :law_category
   belongs_to :app_info, :counter_cache => true
   belongs_to :law_type
@@ -37,14 +37,28 @@ class LawDetail < ActiveRecord::Base
     law_type.nil? ? '' : law_type.db_name
   end
   
-  before_create :set_law_udid
-  def set_law_udid
+  # before_create :set_law_udid
+  # def set_law_udid
+  #   if new_record?
+  #     array = []
+  #     6.times do
+  #       array << rand(9) + 1;
+  #     end
+  #     self.law_udid = array.join('')
+  #   end
+  # end
+  
+  before_create do |law_detail|
     if new_record?
-      array = []
-      6.times do
-        array << rand(9) + 1;
+      if law_detail.law_udid.blank?
+        array = []
+        6.times do
+          array << rand(9) + 1;
+        end
+        self.law_udid = array.join('')
+      else
+        self.law_udid = law_detail.law_udid
       end
-      self.law_udid = array.join('')
     end
   end
   

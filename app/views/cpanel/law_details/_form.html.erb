@@ -5,6 +5,7 @@
 		<legend><%= legend %></legend>
 		
 			<%= f.input :title, :label => "标题", :input_html => { :class => "span5" } %>
+			<%= f.input :law_udid, :label => "法律条目唯一标识", :input_html => { :class => "span3" }, :readonly => @law_detail.id.present? %>
 			<%= f.input :pub_date, :label => "发布日期" %>
 			<%= f.input :catalog, :as => :text, :label => "目录", 
 								  :input_html => { :class => "span5", :rows => 6} %>
