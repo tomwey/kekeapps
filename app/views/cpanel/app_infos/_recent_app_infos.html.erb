@@ -1,0 +1,11 @@
+<% cache recent_app_infos do %>
+<ul>
+	<% recent_app_infos.each do |app_info| %>
+		<li>
+			<div>
+				<%= link_to app_info.title, cpanel_app_info_path(app_info) %>
+			</div>
+		</li>
+	<% end %>
+</ul>
+<% end %>

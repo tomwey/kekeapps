@@ -1,0 +1,7 @@
+<% cache recent_feedbacks do %>
+<ul>
+	<% recent_feedbacks.each do |feedback| %>
+	<li><%= link_to truncate(feedback.content), cpanel_feedback_path(feedback) %></li>
+	<% end %>
+</ul>
+<% end %>
