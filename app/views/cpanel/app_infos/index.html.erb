@@ -22,7 +22,7 @@
 				<% @app_infos.each do |app_info| %>
 				<tr>
 					<td width="10%"><%= app_info.title %></td>
-					<td width="62%"><%= app_info.description %></td>
+					<td width="52%"><%= app_info.description %></td>
 					<td><%= link_to app_info.app_url, app_info.app_url, 
 								:target => "_blank" %></td>
 					<td width="18%"><%= app_info.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>kekeapps - Control Panel</title>
+  <title>可可法律类软件后台管理系统</title>
   <%= stylesheet_link_tag    "cpanel" %>
   <%= csrf_meta_tags %>
 </head>
@@ -9,13 +9,13 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <%= link_to("kekeapps", cpanel_root_path, :class => "brand")%>
+        <%= link_to("可可", cpanel_root_path, :class => "brand")%>
 				<ul class="nav">
-					<li><%= link_to "Dashboard", cpanel_root_path %></li>
-					<li><%= link_to "Apps", cpanel_app_infos_path %></li>
-					<li><%= link_to "Newsblasts", cpanel_news_blasts_path %></li>
-					<li><%= link_to "Feedbacks", cpanel_feedbacks_path %></li>
-					<li><%= link_to "Law Details", cpanel_law_details_path %></li>
+					<li><%= link_to "首页", cpanel_root_path %></li>
+					<li><%= link_to "应用程序", cpanel_app_infos_path %></li>
+					<li><%= link_to "法律数据", cpanel_law_details_path %></li>
+					<li><%= link_to "用户反馈", cpanel_feedbacks_path %></li>
+					<li><%= link_to "新闻", cpanel_news_blasts_path %></li>
 					<li><%= link_to "Api Key", cpanel_latest_api_key_path %></li>
 				</ul>
 				
