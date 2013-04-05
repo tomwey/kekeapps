@@ -1,8 +1,12 @@
 <div class="row-fluid">
 	<div class="recent span9">
 		<h3>最新反馈</h3>
-		<%= render :partial => 'cpanel/feedbacks/recent_feedbacks', 
-							 :locals => { recent_feedbacks: @recent_feedbacks } %>
+		<% if @recent_feedbacks.empty? %>
+			<p class="muted no-message">没有可以显示的内容</p>
+		<% else %>
+			<%= render :partial => 'cpanel/feedbacks/recent_feedbacks', 
+							 	 :locals => { recent_feedbacks: @recent_feedbacks } %>
+		<% end %>
 	</div>
 	
 	<div class="recent span3">
