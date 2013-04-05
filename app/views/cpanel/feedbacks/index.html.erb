@@ -13,17 +13,7 @@
 	      </tr>
 			</thead>
 			<tbody>
-				<% @feedbacks.each do |feedback| %>
-				<tr>
-					<td><%= link_to feedback.id, cpanel_feedback_path(feedback) %></td>
-					<td width="10%"><%= feedback.title %></td>
-					<td width="40%"><%= feedback.content %></td>
-					<td><%= feedback.app_name %></td>
-					<td width="20%"><%= feedback.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-					<td><%= link_to 'Delete', cpanel_feedback_path(feedback), :class => 'btn btn-danger btn-mini', :method => :delete,
-					 	:data => { :confirm => 'Are you sure?' } %></td>
-				</tr>
-				<% end %>
+				<%= render @feedbacks %>
 			</tbody>
 		</table>
 	</div>

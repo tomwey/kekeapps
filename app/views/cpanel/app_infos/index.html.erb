@@ -19,19 +19,7 @@
 	      </tr>
 			</thead>
 			<tbody>
-				<% @app_infos.each do |app_info| %>
-				<tr>
-					<td width="15%"><%= app_info.title %></td>
-					<td width="42%"><%= app_info.description %></td>
-					<td width="10%"><%= link_to "去苹果商店", app_info.app_url, 
-								:target => "_blank" %></td>
-					<td width="18%"><%= app_info.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-					<td width="15">
-						<%= link_to '编辑', edit_cpanel_app_info_path(app_info), class: 'btn btn-mini' %>
-						<%= link_to '删除', [:cpanel, app_info], method: :delete, confirm: '确定要删除吗？', class: 'btn btn-danger btn-mini' %>
-					</td>
-				</tr>
-				<% end %>
+				<%= render @app_infos %>
 			</tbody>
 		</table>
 	</div>

@@ -3,7 +3,7 @@ class Cpanel::AppInfosController < Cpanel::ApplicationController
   # GET /app_infos.json
   def index
     @app_infos = AppInfo.recent
-
+    fresh_when etag: [@app_infos, current_user]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @app_infos }

@@ -15,6 +15,9 @@ gem 'paperclip-dropbox'
 
 gem "devise"
 
+# 缓存
+gem "cache_digests"
+
 # 分页
 gem "will_paginate"
 
