@@ -1,34 +1,14 @@
 <div class="row-fluid">
+	<div class="recent span9">
+		<h3>最新反馈</h3>
+		<%= render :partial => 'cpanel/feedbacks/recent_feedbacks', 
+							 :locals => { recent_feedbacks: @recent_feedbacks } %>
+	</div>
+	
 	<div class="recent span3">
 		<h3>最新应用</h3>
-		<ul>
-			<% @recent_app_infos.each do |app_info| %>
-				<li>
-					<div>
-						<%= link_to app_info.title, cpanel_app_info_path(app_info) %>
-					</div>
-				</li>
-			<% end %>
-		</ul>
+		<%= render :partial => 'cpanel/app_infos/recent_app_infos',
+			 				 :locals => { recent_app_infos: @recent_app_infos }  %>
 	</div>
-	<div class="recent span5">
-		<h3>最新资讯</h3>
-		<% if @recent_news_blasts.empty? %>
-		<p>没有可以显示的内容</p>
-		<% else %>
-		<ul>
-			<% @recent_news_blasts.each do |news_blast| %>
-			<li><%= link_to news_blast.title %></li>
-			<% end %>
-		</ul>
-		<% end %>
-	</div>
-	<div class="recent span4">
-		<h3>最新反馈</h3>
-		<ul>
-			<% @recent_feedbacks.each do |feedback| %>
-			<li><%= link_to truncate(feedback.content), cpanel_feedback_path(feedback) %></li>
-			<% end %>
-		</ul>
-	</div>
+	
 </div>
