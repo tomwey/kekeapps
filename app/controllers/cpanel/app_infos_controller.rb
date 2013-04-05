@@ -3,22 +3,16 @@ class Cpanel::AppInfosController < Cpanel::ApplicationController
   # GET /app_infos.json
   def index
     @app_infos = AppInfo.recent
-    fresh_when etag: [@app_infos, current_user]
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @app_infos }
-    end
+    fresh_when etag: [@app_infos.first, current_user], 
+               last_modified: @app_infos.first.updated_at
   end
 
   # GET /app_infos/1
   # GET /app_infos/1.json
   def show
     @app_info = AppInfo.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @app_info }
-    end
+    fresh_when :etag => [@app_info, current_user],
+               :last_modified => @app_info.updated_at
   end
 
   # GET /app_infos/new

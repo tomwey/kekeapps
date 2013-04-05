@@ -4,9 +4,14 @@ class Cpanel::LawDetailsController < Cpanel::ApplicationController
     @law_details = LawDetail.includes(:law_category, :app_info)
                             .where(:visible => true)
                             .sorted.paginate(page: params[:page], per_page: 5)
+                            
+    fresh_when etag: [@law_details.first, current_user],
+               last_modified: @law_details.first.created_at
   end
 
   def show
+    fresh_when etag: [@law_detail, current_user],
+               last_modified: @law_detail.created_at
     
   end
 
