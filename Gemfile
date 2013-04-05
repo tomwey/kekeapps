@@ -15,8 +15,13 @@ gem 'paperclip-dropbox'
 
 gem "devise"
 
+# 分页
 gem "will_paginate"
+
 gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
+
+# Bootstrap
+gem "bootstrap-will_paginate"
 gem "anjlab-bootstrap-rails", :git => "git://github.com/anjlab/bootstrap-rails.git", :require => "bootstrap-rails"
 gem "bootstrap_helper", "1.4.1"
 

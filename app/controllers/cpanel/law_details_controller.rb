@@ -3,7 +3,7 @@ class Cpanel::LawDetailsController < Cpanel::ApplicationController
   def index
     @law_details = LawDetail.includes(:law_category, :app_info)
                             .where(:visible => true)
-                            .sorted
+                            .sorted.paginate(page: params[:page], per_page: 5)
   end
 
   def show
