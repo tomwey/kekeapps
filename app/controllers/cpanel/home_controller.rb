@@ -1,7 +1,7 @@
 class Cpanel::HomeController < Cpanel::ApplicationController
   def index
     @recent_app_infos = AppInfo.recent.limit(10)
-    @recent_feedbacks = Feedback.recent.limit(10)
+    @recent_feedbacks = Feedback.recent.limit(20)
     
     app_info = @recent_app_infos.first
     feedback = @recent_feedbacks.first

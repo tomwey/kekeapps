@@ -36,12 +36,19 @@ ul {
 		height: 30px;
 		line-height:30px;
 	}
-	ul {
-		width: 95%;
+	.recent_apps {
+		width: 90%;
+	}
+	
+	.recent_feedbacks{
+		width: 97%;
+	}
+	
+	.recent_apps, .recent_feedbacks {
 		margin: 0 auto;
 		li {
 			border-bottom: 1px dashed #085a87;
-			padding: 8px;
+			padding: 8px 0;
 			&:last-child {
 				border:none;
 			};
@@ -56,6 +63,8 @@ ul {
 			
 		}
 	}
+	
+	
 	
 }
 
