@@ -9,6 +9,9 @@ Kekeapps::Application.routes.draw do
           get :check_data
         end
       end
+      
+      # match '/check_data' => 'app_infos#check_data', via: :get
+      
       # match '/apple_id/:bundle_id' => 'news_blasts#index', via: :get
       resources :feedbacks, :only => :create
     end

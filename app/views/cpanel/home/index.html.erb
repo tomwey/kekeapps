@@ -8,11 +8,10 @@
 							 	 :locals => { recent_feedbacks: @recent_feedbacks } %>
 		<% end %>
 	</div>
-	
 	<div class="recent span3">
 		<h3>最新应用</h3>
-		<%= render :partial => 'cpanel/app_infos/recent_app_infos',
-			 				 :locals => { recent_app_infos: @recent_app_infos }  %>
+		<%= render(:partial => 'cpanel/app_infos/recent_app_infos',
+			 				 :locals => { recent_app_infos: @recent_app_infos }) %>
 	</div>
 	
 </div>
