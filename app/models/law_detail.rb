@@ -5,7 +5,7 @@ class LawDetail < ActiveRecord::Base
                   :app_info_id, :law_type_id
   
   belongs_to :law_category
-  belongs_to :app_info, :counter_cache => true
+  belongs_to :app_info#, :counter_cache => true
   belongs_to :law_type
   
   ACTIONS = %w(add update delete)
