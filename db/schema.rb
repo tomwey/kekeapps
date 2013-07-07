@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427142340) do
+ActiveRecord::Schema.define(:version => 20130707084057) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20130427142340) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "law_details_count",   :default => 0
+  end
+
+  create_table "device_infos", :force => true do |t|
+    t.string   "device_token"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "device_infos_notifications", :force => true do |t|
+    t.integer "notification_id"
+    t.integer "device_info_id"
   end
 
   create_table "feedbacks", :force => true do |t|
@@ -117,6 +128,12 @@ ActiveRecord::Schema.define(:version => 20130427142340) do
     t.string   "title"
     t.text     "content"
     t.string   "link"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

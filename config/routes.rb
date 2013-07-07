@@ -4,6 +4,7 @@ Kekeapps::Application.routes.draw do
     namespace :v1 do
       resources :app_infos, :only => :index, :format => :json
       resources :news_blasts, :only => :index, :format => :json
+      resources :device_infos, :only => :create, :format => :json
       resources :law_details, :only => :index, :format => :json do
         collection do
           get :check_data
@@ -41,6 +42,8 @@ Kekeapps::Application.routes.draw do
     resources :news_blasts
     resources :feedbacks, :only => [:index, :show, :destroy]
     resources :law_details
+    resources :notifications
+    resources :device_infos, only: [:index, :destroy]
   end
 
   # The priority is based upon order of creation:

@@ -13,6 +13,8 @@ gem 'dropbox-sdk'
 gem 'paperclip'
 gem 'paperclip-dropbox'
 
+gem 'apns'
+
 gem "devise"
 
 # 缓存
