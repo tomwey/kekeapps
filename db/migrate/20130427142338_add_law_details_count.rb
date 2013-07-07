@@ -6,7 +6,7 @@ class AddLawDetailsCount < ActiveRecord::Migration
     # AppInfo.find_each do |info|
     #   info.reset_counters info.id, :law_details
     # end
-    remove_column :app_infos, :law_details_count
+    # remove_column :app_infos, :law_details_count
   end
 
   def down
